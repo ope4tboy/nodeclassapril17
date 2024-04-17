@@ -32,3 +32,17 @@ exports.getCreatepost = (req, res) =>{
         message : "product added successfully"
     })
 }
+
+exports.update = (req, res) =>{
+    res.status(200)
+    res.json({
+        message : "update added successfully"
+    })
+}
+
+exports.deleteProduct = (req, res) =>{
+    res.status(200)
+    res.json({
+        message : "product deleted successfully"
+    })
+}
