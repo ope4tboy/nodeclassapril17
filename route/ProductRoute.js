@@ -1,44 +1,16 @@
 const express = require("express")
 
 const router = express.Router()
+const {getAllProducts, getSingleProduct, getCreatepost} = require('../controllers/ProductController')
 
 
-router.get("/products", (req, res) =>{
-    res.status(200)
-    res.json([
-        {
-            productName : "iphone15",
-            producPrice: "$1500",
-        },
-
-        {
-            productName : "iphone14",
-            producPrice : "$1300",
-        },
-
-        {
-            productName : "iphone 13",
-            producPrice : "$1000"
-        }
-    ])
-})
+router.get("/products", getAllProducts)
 
 // GET SINGLE PRODUCT
-router.get('/products/:id', (req, res)=>{
-    res.status(200)
-    res.json({
-        productName : "iphone15",
-        producPrice: "$1500",   
-    })
-})
+router.get('/products/:id', getSingleProduct)
 
 // CREATE A PRODUCT
-router.post("/products", (req, res) =>{
-    res.status(200)
-    res.json({
-        message : "product added successfully"
-    })
-})
+router.post("/products", getCreatepost)
 
 // TO UPDATE A RESOURCE
 router.put("/products/:id", (req, res) =>{
@@ -55,6 +27,8 @@ router.delete("/products/:id", (req, res) =>{
         message : "product deleted successfully"
     })
 })
+
+
 
 
 
